@@ -1,0 +1,12 @@
+server:
+  port: 7006
+spring:
+  application:
+    name: goods
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+
+
+

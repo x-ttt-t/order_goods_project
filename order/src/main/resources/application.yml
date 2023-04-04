@@ -1,0 +1,21 @@
+server:
+  port: 7009
+spring:
+  application:
+    name: order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+logging:
+  level:
+    com,example.feignapi.entity.service.UserClient: DEBUG
+feign:
+  circuitbreaker:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
+

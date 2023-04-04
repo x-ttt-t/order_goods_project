@@ -1,0 +1,16 @@
+server:
+  port: 7000                                     # 服务器端口号7000
+spring:
+  application:                                      #端口号名称配置
+    name: eureka-server
+eureka:
+  client:
+    fetch-registry: false                           # 表示是否向Eureka Server注册
+    register-with-eureka: false                     # 表示是否从Eureka Server获取注册信息
+    service-url:
+      defaultZone:
+        http://${eureka.instance.hostname}:${server.port}/eureka/   #设置服务注册中心地址
+
+  instance:
+    hostname: localhost
+

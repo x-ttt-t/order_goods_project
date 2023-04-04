@@ -1,0 +1,21 @@
+server:
+  port: 8989
+spring:
+  application:
+    name: zuul-demo
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+zuul:
+  routes:
+    order:
+      path:/order/**
+  ratelimit:
+    enabled: true
+    policies:
+      order:
+        limit: 3
+
